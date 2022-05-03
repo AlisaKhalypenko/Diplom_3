@@ -1,0 +1,4 @@
+PageObject\RegistrationPage.class
+PageObject\LoginPage.class
+PageObject\MainPage.class
+PageObject\PersonalAccountPage.class

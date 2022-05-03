@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-03T17:10:24 MSK" name="Surefire suite" finished-at="2022-05-03T17:11:02 MSK" duration-ms="38183">
+    <groups>
+    </groups>
+    <test started-at="2022-05-03T17:10:24 MSK" name="Surefire test" finished-at="2022-05-03T17:11:02 MSK" duration-ms="38183">
+      <class name="RegistrationTest">
+        <test-method signature="registrationWithIncorrectPassword()" started-at="2022-05-03T17:10:43 MSK" name="registrationWithIncorrectPassword" finished-at="2022-05-03T17:10:44 MSK" duration-ms="713" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationWithIncorrectPassword -->
+        <test-method signature="registrationWithCorrectPassword()" started-at="2022-05-03T17:10:43 MSK" name="registrationWithCorrectPassword" finished-at="2022-05-03T17:10:48 MSK" duration-ms="4615" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationWithCorrectPassword -->
+      </class> <!-- RegistrationTest -->
+      <class name="ExitTest">
+        <test-method signature="exitFromAccount()" started-at="2022-05-03T17:10:37 MSK" name="exitFromAccount" finished-at="2022-05-03T17:10:41 MSK" duration-ms="4235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exitFromAccount -->
+      </class> <!-- ExitTest -->
+      <class name="EnterTest">
+        <test-method signature="enterToAccountFromMainPageByEnterToAccoutButton()" started-at="2022-05-03T17:10:24 MSK" name="enterToAccountFromMainPageByEnterToAccoutButton" finished-at="2022-05-03T17:10:34 MSK" duration-ms="9656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterToAccountFromMainPageByEnterToAccoutButton -->
+        <test-method signature="enterToAccountFromLoginPageByRecoverPasswordButton()" started-at="2022-05-03T17:10:24 MSK" name="enterToAccountFromLoginPageByRecoverPasswordButton" finished-at="2022-05-03T17:10:35 MSK" duration-ms="10963" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterToAccountFromLoginPageByRecoverPasswordButton -->
+        <test-method signature="enterToAccountFromMainPageByPersonalAccountButton()" started-at="2022-05-03T17:10:24 MSK" name="enterToAccountFromMainPageByPersonalAccountButton" finished-at="2022-05-03T17:10:36 MSK" duration-ms="11667" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterToAccountFromMainPageByPersonalAccountButton -->
+        <test-method signature="enterToAccountFromRegistrationPageByEnterButton()" started-at="2022-05-03T17:10:24 MSK" name="enterToAccountFromRegistrationPageByEnterButton" finished-at="2022-05-03T17:10:37 MSK" duration-ms="12344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterToAccountFromRegistrationPageByEnterButton -->
+      </class> <!-- EnterTest -->
+      <class name="GoToTheSectionTest">
+        <test-method signature="goToTheBunSection()" started-at="2022-05-03T17:10:41 MSK" name="goToTheBunSection" finished-at="2022-05-03T17:10:43 MSK" duration-ms="2309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToTheBunSection -->
+        <test-method signature="goToTheFillingSection()" started-at="2022-05-03T17:10:41 MSK" name="goToTheFillingSection" finished-at="2022-05-03T17:10:42 MSK" duration-ms="1507" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToTheFillingSection -->
+        <test-method signature="goToTheSauseSection()" started-at="2022-05-03T17:10:41 MSK" name="goToTheSauseSection" finished-at="2022-05-03T17:10:42 MSK" duration-ms="765" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToTheSauseSection -->
+      </class> <!-- GoToTheSectionTest -->
+      <class name="SwitchingBetweenPagesTest">
+        <test-method signature="switchingFromPersonalAccountToDesignerByDesignerButton()" started-at="2022-05-03T17:10:48 MSK" name="switchingFromPersonalAccountToDesignerByDesignerButton" finished-at="2022-05-03T17:10:53 MSK" duration-ms="4769" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- switchingFromPersonalAccountToDesignerByDesignerButton -->
+        <test-method signature="switchingToPersonalAccount()" started-at="2022-05-03T17:10:48 MSK" name="switchingToPersonalAccount" finished-at="2022-05-03T17:10:57 MSK" duration-ms="9395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- switchingToPersonalAccount -->
+        <test-method signature="switchingFromPersonalAccountToDesignerByLogoButton()" started-at="2022-05-03T17:10:48 MSK" name="switchingFromPersonalAccountToDesignerByLogoButton" finished-at="2022-05-03T17:11:02 MSK" duration-ms="14492" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- switchingFromPersonalAccountToDesignerByLogoButton -->
+      </class> <!-- SwitchingBetweenPagesTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
