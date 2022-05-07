@@ -1,9 +1,13 @@
-package PageObject;
+package pageobject;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
 
 public class RegistrationPage {
     //локатор кнопки Зарегистрироваться
@@ -46,6 +50,11 @@ public class RegistrationPage {
     public void clickRegistrationButton(){
         registrationButton.click();
     }
+
+    public void waitForLoadRoute(){
+        $(byText("Вход")).shouldBe(visible);
+    }
+
 
     public void clickEnterButton(){
         enterButton.click();

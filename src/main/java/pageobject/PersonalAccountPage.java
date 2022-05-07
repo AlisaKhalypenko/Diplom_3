@@ -1,4 +1,4 @@
-package PageObject;
+package pageobject;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -32,6 +32,7 @@ public class PersonalAccountPage {
     @Step("click ExitButton")
     public void clickExitButton(){
         exitButton.shouldBe(Condition.visible).click();
+        $(byText("Вход")).shouldBe(visible);
     }
 
     @Step("click LogoButton")

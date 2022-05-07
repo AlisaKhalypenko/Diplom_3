@@ -1,9 +1,13 @@
-package PageObject;
+package pageobject;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
     //локатор кнопки Войти в аккаунт
@@ -15,7 +19,7 @@ public class MainPage {
     private SelenideElement personalAccountButton;
 
     //локатор кнопки Булки
-    @FindBy(how = How.XPATH,using = "//span[starts-with(@class, 'text text_type_main-default') and text()='Булки']")
+    @FindBy(how = How.XPATH,using = "//div[starts-with(@class, 'tab_tab')]")
     private SelenideElement bunButton;
 
     //локатор кнопки Соусы
@@ -55,15 +59,18 @@ public class MainPage {
     @Step("click SauceButton")
     public void clickSauceButton(){
         sauceButton.click();
+        $(byText("Соус Spicy-X")).shouldBe(visible);
     }
 
     @Step("click FillingButton")
     public void clickFillingButton(){
         fillingButton.click();
+        $(byText("Мясо бессмертных моллюсков Protostomia")).shouldBe(visible);
     }
 
     @Step("click BunButton")
     public void clickBunButton(){
         bunButton.click();
+        $(byText("Флюоресцентная булка R2-D3")).shouldBe(visible);
     }
 }

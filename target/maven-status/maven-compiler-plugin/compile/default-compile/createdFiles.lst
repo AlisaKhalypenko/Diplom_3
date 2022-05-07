@@ -1,4 +1,5 @@
-PageObject\RegistrationPage.class
-PageObject\LoginPage.class
-PageObject\MainPage.class
-PageObject\PersonalAccountPage.class
+pageobject\ConstantPage.class
+pageobject\RegistrationPage.class
+pageobject\MainPage.class
+pageobject\PersonalAccountPage.class
+pageobject\LoginPage.class
