@@ -2,71 +2,71 @@
 <testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-07T01:48:30 MSK" name="Surefire suite" finished-at="2022-05-07T01:48:57 MSK" duration-ms="26579">
+  <suite started-at="2022-05-10T13:45:23 MSK" name="Surefire suite" finished-at="2022-05-10T13:45:53 MSK" duration-ms="29398">
     <groups>
     </groups>
-    <test started-at="2022-05-07T01:48:30 MSK" name="Surefire test" finished-at="2022-05-07T01:48:57 MSK" duration-ms="26579">
+    <test started-at="2022-05-10T13:45:23 MSK" name="Surefire test" finished-at="2022-05-10T13:45:53 MSK" duration-ms="29398">
       <class name="RegistrationTest">
-        <test-method signature="registrationWithCorrectPassword()" started-at="2022-05-07T01:48:44 MSK" name="registrationWithCorrectPassword" finished-at="2022-05-07T01:48:47 MSK" duration-ms="3371" status="PASS">
+        <test-method signature="registrationWithCorrectPassword()" started-at="2022-05-10T13:45:41 MSK" name="registrationWithCorrectPassword" finished-at="2022-05-10T13:45:44 MSK" duration-ms="3408" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registrationWithCorrectPassword -->
-        <test-method signature="registrationWithIncorrectPassword()" started-at="2022-05-07T01:48:44 MSK" name="registrationWithIncorrectPassword" finished-at="2022-05-07T01:48:44 MSK" duration-ms="524" status="PASS">
+        <test-method signature="registrationWithIncorrectPassword()" started-at="2022-05-10T13:45:41 MSK" name="registrationWithIncorrectPassword" finished-at="2022-05-10T13:45:41 MSK" duration-ms="515" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registrationWithIncorrectPassword -->
       </class> <!-- RegistrationTest -->
       <class name="ExitTest">
-        <test-method signature="exitFromAccount()" started-at="2022-05-07T01:48:39 MSK" name="exitFromAccount" finished-at="2022-05-07T01:48:42 MSK" duration-ms="2834" status="PASS">
+        <test-method signature="exitFromAccount()" started-at="2022-05-10T13:45:33 MSK" name="exitFromAccount" finished-at="2022-05-10T13:45:39 MSK" duration-ms="6266" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exitFromAccount -->
       </class> <!-- ExitTest -->
       <class name="EnterTest">
-        <test-method signature="enterToAccountFromMainPageByEnterToAccoutButton()" started-at="2022-05-07T01:48:30 MSK" name="enterToAccountFromMainPageByEnterToAccoutButton" finished-at="2022-05-07T01:48:37 MSK" duration-ms="7096" status="PASS">
+        <test-method signature="enterToAccountFromMainPageByEnterToAccoutButton()" started-at="2022-05-10T13:45:24 MSK" name="enterToAccountFromMainPageByEnterToAccoutButton" finished-at="2022-05-10T13:45:31 MSK" duration-ms="7721" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterToAccountFromMainPageByEnterToAccoutButton -->
-        <test-method signature="enterToAccountFromRegistrationPageByEnterButton()" started-at="2022-05-07T01:48:30 MSK" name="enterToAccountFromRegistrationPageByEnterButton" finished-at="2022-05-07T01:48:39 MSK" duration-ms="8902" status="PASS">
+        <test-method signature="enterToAccountFromRegistrationPageByEnterButton()" started-at="2022-05-10T13:45:24 MSK" name="enterToAccountFromRegistrationPageByEnterButton" finished-at="2022-05-10T13:45:33 MSK" duration-ms="9489" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterToAccountFromRegistrationPageByEnterButton -->
-        <test-method signature="enterToAccountFromMainPageByPersonalAccountButton()" started-at="2022-05-07T01:48:30 MSK" name="enterToAccountFromMainPageByPersonalAccountButton" finished-at="2022-05-07T01:48:39 MSK" duration-ms="8368" status="PASS">
+        <test-method signature="enterToAccountFromMainPageByPersonalAccountButton()" started-at="2022-05-10T13:45:24 MSK" name="enterToAccountFromMainPageByPersonalAccountButton" finished-at="2022-05-10T13:45:33 MSK" duration-ms="8987" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterToAccountFromMainPageByPersonalAccountButton -->
-        <test-method signature="enterToAccountFromLoginPageByRecoverPasswordButton()" started-at="2022-05-07T01:48:30 MSK" name="enterToAccountFromLoginPageByRecoverPasswordButton" finished-at="2022-05-07T01:48:38 MSK" duration-ms="7693" status="PASS">
+        <test-method signature="enterToAccountFromLoginPageByRecoverPasswordButton()" started-at="2022-05-10T13:45:24 MSK" name="enterToAccountFromLoginPageByRecoverPasswordButton" finished-at="2022-05-10T13:45:32 MSK" duration-ms="8456" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterToAccountFromLoginPageByRecoverPasswordButton -->
       </class> <!-- EnterTest -->
       <class name="GoToTheSectionTest">
-        <test-method signature="goToTheSauseSection()" started-at="2022-05-07T01:48:42 MSK" name="goToTheSauseSection" finished-at="2022-05-07T01:48:43 MSK" duration-ms="572" status="PASS">
+        <test-method signature="goToTheSauseSection()" started-at="2022-05-10T13:45:39 MSK" name="goToTheSauseSection" finished-at="2022-05-10T13:45:40 MSK" duration-ms="515" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goToTheSauseSection -->
-        <test-method signature="goToTheFillingSection()" started-at="2022-05-07T01:48:42 MSK" name="goToTheFillingSection" finished-at="2022-05-07T01:48:43 MSK" duration-ms="1117" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- goToTheFillingSection -->
-        <test-method signature="goToTheBunSection()" started-at="2022-05-07T01:48:42 MSK" name="goToTheBunSection" finished-at="2022-05-07T01:48:44 MSK" duration-ms="1692" status="PASS">
+        <test-method signature="goToTheBunSection()" started-at="2022-05-10T13:45:39 MSK" name="goToTheBunSection" finished-at="2022-05-10T13:45:41 MSK" duration-ms="1628" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goToTheBunSection -->
+        <test-method signature="goToTheFillingSection()" started-at="2022-05-10T13:45:39 MSK" name="goToTheFillingSection" finished-at="2022-05-10T13:45:40 MSK" duration-ms="1037" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToTheFillingSection -->
       </class> <!-- GoToTheSectionTest -->
       <class name="SwitchingBetweenPagesTest">
-        <test-method signature="switchingFromPersonalAccountToDesignerByDesignerButton()" started-at="2022-05-07T01:48:47 MSK" name="switchingFromPersonalAccountToDesignerByDesignerButton" finished-at="2022-05-07T01:48:51 MSK" duration-ms="3611" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- switchingFromPersonalAccountToDesignerByDesignerButton -->
-        <test-method signature="switchingToPersonalAccount()" started-at="2022-05-07T01:48:47 MSK" name="switchingToPersonalAccount" finished-at="2022-05-07T01:48:54 MSK" duration-ms="6439" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- switchingToPersonalAccount -->
-        <test-method signature="switchingFromPersonalAccountToDesignerByLogoButton()" started-at="2022-05-07T01:48:47 MSK" name="switchingFromPersonalAccountToDesignerByLogoButton" finished-at="2022-05-07T01:48:57 MSK" duration-ms="9637" status="PASS">
+        <test-method signature="switchingFromPersonalAccountToDesignerByLogoButton()" started-at="2022-05-10T13:45:44 MSK" name="switchingFromPersonalAccountToDesignerByLogoButton" finished-at="2022-05-10T13:45:53 MSK" duration-ms="8404" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- switchingFromPersonalAccountToDesignerByLogoButton -->
+        <test-method signature="switchingToPersonalAccount()" started-at="2022-05-10T13:45:44 MSK" name="switchingToPersonalAccount" finished-at="2022-05-10T13:45:50 MSK" duration-ms="5413" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- switchingToPersonalAccount -->
+        <test-method signature="switchingFromPersonalAccountToDesignerByDesignerButton()" started-at="2022-05-10T13:45:44 MSK" name="switchingFromPersonalAccountToDesignerByDesignerButton" finished-at="2022-05-10T13:45:47 MSK" duration-ms="2870" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- switchingFromPersonalAccountToDesignerByDesignerButton -->
       </class> <!-- SwitchingBetweenPagesTest -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->

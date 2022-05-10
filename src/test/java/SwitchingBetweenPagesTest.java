@@ -1,7 +1,10 @@
+import api.User;
+import api.UserClient;
+import io.restassured.response.ValidatableResponse;
+import org.junit.After;
 import pageobject.ConstantPage;
 import pageobject.LoginPage;
 import pageobject.PersonalAccountPage;
-import pageobject.RegistrationPage;
 import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
@@ -12,18 +15,26 @@ import static com.codeborne.selenide.WebDriverRunner.url;
 import static org.junit.Assert.assertEquals;
 
 public class SwitchingBetweenPagesTest {
+    UserClient userClient;
+    User user;
+    String accessToken;
     String email = RandomStringUtils.randomAlphabetic(10)+"@gmail.com";
     String name = RandomStringUtils.randomAlphabetic(10);
     String password = RandomStringUtils.randomAlphabetic(10);
 
     @Before
     public void userRegistration() {
-        RegistrationPage registrationPage = open(ConstantPage.BASE_URL_REGISTER, RegistrationPage.class);
-        registrationPage.setName(name);
-        registrationPage.setEmail(email);
-        registrationPage.setPassword(password);
-        registrationPage.clickRegistrationButton();
-        registrationPage.waitForLoadRoute();
+        userClient = new UserClient();
+        user = new User(email, password, name, accessToken);
+        ValidatableResponse createResponse = userClient.create(user);
+        String accessTokenExtract = createResponse.extract().path("accessToken");
+        accessToken = accessTokenExtract.replace("Bearer ", "");
+        user.setAccessToken(accessToken);
+    }
+
+    @After
+    public void tearDown(){
+            userClient.delete(user);
     }
 
     @Test
@@ -37,7 +48,7 @@ public class SwitchingBetweenPagesTest {
         loginPage.openPersonalAccountAfterAuthorisation();
         String url = url();
 
-        assertEquals(url, "https://stellarburgers.nomoreparties.site/account/profile");
+        assertEquals(url, ConstantPage.BASE_URL_PROFILE);
 
         personalAccountPage.clickExitButton();
     }
@@ -54,7 +65,7 @@ public class SwitchingBetweenPagesTest {
         personalAccountPage.clickDesignButton();
         String url = url();
 
-        assertEquals(url, "https://stellarburgers.nomoreparties.site/");
+        assertEquals(url, ConstantPage.BASE_URL);
 
         loginPage.openPersonalAccountAfterAuthorisation();
         personalAccountPage.clickExitButton();
@@ -72,7 +83,7 @@ public class SwitchingBetweenPagesTest {
         personalAccountPage.clickLogoButton();
         String url = url();
 
-        assertEquals(url, "https://stellarburgers.nomoreparties.site/");
+        assertEquals(url, ConstantPage.BASE_URL);
 
         loginPage.openPersonalAccountAfterAuthorisation();
         personalAccountPage.clickExitButton();

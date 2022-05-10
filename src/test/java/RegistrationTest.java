@@ -1,3 +1,9 @@
+import api.User;
+import api.UserClient;
+import api.UserCredentials;
+import io.restassured.response.ValidatableResponse;
+import org.junit.After;
+import org.junit.Before;
 import pageobject.ConstantPage;
 import pageobject.LoginPage;
 import pageobject.PersonalAccountPage;
@@ -11,9 +17,30 @@ import static com.codeborne.selenide.WebDriverRunner.url;
 import static org.junit.Assert.assertEquals;
 
 public class RegistrationTest {
+    UserClient userClient;
+    User user;
+    String accessToken;
     String email = RandomStringUtils.randomAlphabetic(10)+"@gmail.com";
     String name = RandomStringUtils.randomAlphabetic(10);
     String password = RandomStringUtils.randomAlphabetic(10);
+    String incorrectPassword =RandomStringUtils.randomAlphabetic(5);
+
+    @Before
+    public void userRegistration() {
+        userClient = new UserClient();
+        user = new User(email, password, name, accessToken);
+    }
+
+    @After
+    public void tearDown(){
+        if( accessToken != null) {
+            ValidatableResponse loginResponse = userClient.login(new UserCredentials(email, password));
+            String accessTokenExtract = loginResponse.extract().path("accessToken");
+            accessToken = accessTokenExtract.replace("Bearer ", "");
+            user.setAccessToken(accessToken);
+            userClient.delete(user);
+        }
+    }
 
     @Test
     @DisplayName("registration With Correct Password")
@@ -25,16 +52,17 @@ public class RegistrationTest {
         registrationPage.clickRegistrationButton();
         registrationPage.waitForLoadRoute();
         String url = url();
-        assertEquals(url, "https://stellarburgers.nomoreparties.site/login");
+        assertEquals(url, ConstantPage.BASE_URL_LOGIN);
+
         LoginPage loginPage = open(ConstantPage.BASE_URL_LOGIN, LoginPage.class);
         loginPage.setEmail(email);
         loginPage.setPassword(password);
         loginPage.clickEnterButton();
+
         String url1 = url();
+        assertEquals(url1, ConstantPage.BASE_URL);
 
-        assertEquals(url1, "https://stellarburgers.nomoreparties.site/");
-
-        PersonalAccountPage personalAccountPage = open("https://stellarburgers.nomoreparties.site", PersonalAccountPage.class);
+        PersonalAccountPage personalAccountPage = open(ConstantPage.BASE_URL, PersonalAccountPage.class);
         loginPage.openPersonalAccountAfterAuthorisation();
         personalAccountPage.clickExitButton();
     }
@@ -43,7 +71,7 @@ public class RegistrationTest {
     @DisplayName("Incorrect Password input")
     public void registrationWithIncorrectPassword(){
         RegistrationPage registrationPage = open(ConstantPage.BASE_URL_REGISTER, RegistrationPage.class);
-        registrationPage.setPassword("12345");
+        registrationPage.setPassword(incorrectPassword);
         registrationPage.clickRegistrationButton();
         registrationPage.formError();
     }

@@ -17,7 +17,7 @@ public class EnterTest {
         MainPage mainPage = open(ConstantPage.BASE_URL, MainPage.class);
         mainPage.clickEnterToAccountButton();
         String url = url();
-        assertEquals(url, "https://stellarburgers.nomoreparties.site/login");
+        assertEquals(url,  ConstantPage.BASE_URL_LOGIN);
     }
 
     @Test
@@ -26,7 +26,7 @@ public class EnterTest {
         MainPage mainPage = open(ConstantPage.BASE_URL, MainPage.class);
         mainPage.clickPersonalAccountButton();
         String url = url();
-        assertEquals(url, "https://stellarburgers.nomoreparties.site/login");
+        assertEquals(url,  ConstantPage.BASE_URL_LOGIN);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class EnterTest {
         RegistrationPage registrationPage = open(ConstantPage.BASE_URL_REGISTER, RegistrationPage.class);
         registrationPage.clickEnterButton();
         String url = url();
-        assertEquals(url, "https://stellarburgers.nomoreparties.site/login");
+        assertEquals(url, ConstantPage.BASE_URL_LOGIN);
     }
 
     @Test
@@ -44,6 +44,6 @@ public class EnterTest {
         LoginPage loginPage = open(ConstantPage.BASE_URL_LOGIN, LoginPage.class);
         loginPage.clickRecoverPasswordButton();
         String url = url();
-        assertEquals(url, "https://stellarburgers.nomoreparties.site/forgot-password");
+        assertEquals(url, ConstantPage.BASE_URL_FORGOT_PASSWORD);
     }
 }

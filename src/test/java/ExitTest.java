@@ -1,7 +1,10 @@
+import api.User;
+import api.UserClient;
+import io.restassured.response.ValidatableResponse;
+import org.junit.After;
 import pageobject.ConstantPage;
 import pageobject.LoginPage;
 import pageobject.PersonalAccountPage;
-import pageobject.RegistrationPage;
 import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
@@ -15,15 +18,24 @@ public class ExitTest {
     String email = RandomStringUtils.randomAlphabetic(10)+"@gmail.com";
     String name = RandomStringUtils.randomAlphabetic(10);
     String password = RandomStringUtils.randomAlphabetic(10);
+    UserClient userClient;
+    User user;
+    String accessToken;
 
 
     @Before
     public void userRegistration() {
-        RegistrationPage registrationPage = open(ConstantPage.BASE_URL_REGISTER, RegistrationPage.class);
-        registrationPage.setName(name);
-        registrationPage.setEmail(email);
-        registrationPage.setPassword(password);
-        registrationPage.clickRegistrationButton();
+        userClient = new UserClient();
+        user = new User(email, password, name, accessToken);
+        ValidatableResponse createResponse = userClient.create(user);
+        String accessTokenExtract = createResponse.extract().path("accessToken");
+        accessToken = accessTokenExtract.replace("Bearer ", "");
+        user.setAccessToken(accessToken);
+    }
+
+    @After
+    public void tearDown(){
+        userClient.delete(user);
     }
 
     @Test
@@ -37,7 +49,7 @@ public class ExitTest {
         loginPage.openPersonalAccountAfterAuthorisation();
         String url = url();
 
-        assertEquals(url, "https://stellarburgers.nomoreparties.site/account/profile");
+        assertEquals(url, ConstantPage.BASE_URL_PROFILE);
 
         personalAccountPage.clickExitButton();
     }
