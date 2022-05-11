@@ -34,6 +34,10 @@ public class SwitchingBetweenPagesTest {
 
     @After
     public void tearDown(){
+        PersonalAccountPage personalAccountPage = open(ConstantPage.BASE_URL, PersonalAccountPage.class);
+        LoginPage loginPage = open(ConstantPage.BASE_URL_LOGIN, LoginPage.class);
+        loginPage.openPersonalAccountAfterAuthorisation();
+        personalAccountPage.clickExitButton();
             userClient.delete(user);
     }
 
@@ -44,13 +48,10 @@ public class SwitchingBetweenPagesTest {
         loginPage.setEmail(email);
         loginPage.setPassword(password);
         loginPage.clickEnterButton();
-        PersonalAccountPage personalAccountPage = open(ConstantPage.BASE_URL, PersonalAccountPage.class);
         loginPage.openPersonalAccountAfterAuthorisation();
         String url = url();
 
         assertEquals(url, ConstantPage.BASE_URL_PROFILE);
-
-        personalAccountPage.clickExitButton();
     }
 
     @Test
@@ -66,9 +67,6 @@ public class SwitchingBetweenPagesTest {
         String url = url();
 
         assertEquals(url, ConstantPage.BASE_URL);
-
-        loginPage.openPersonalAccountAfterAuthorisation();
-        personalAccountPage.clickExitButton();
     }
 
     @Test
@@ -84,9 +82,6 @@ public class SwitchingBetweenPagesTest {
         String url = url();
 
         assertEquals(url, ConstantPage.BASE_URL);
-
-        loginPage.openPersonalAccountAfterAuthorisation();
-        personalAccountPage.clickExitButton();
     }
 
 }

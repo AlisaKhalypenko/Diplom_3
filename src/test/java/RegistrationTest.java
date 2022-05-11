@@ -33,11 +33,7 @@ public class RegistrationTest {
 
     @After
     public void tearDown(){
-        if( accessToken != null) {
-            ValidatableResponse loginResponse = userClient.login(new UserCredentials(email, password));
-            String accessTokenExtract = loginResponse.extract().path("accessToken");
-            accessToken = accessTokenExtract.replace("Bearer ", "");
-            user.setAccessToken(accessToken);
+        if( accessToken != null){
             userClient.delete(user);
         }
     }
@@ -61,6 +57,10 @@ public class RegistrationTest {
 
         String url1 = url();
         assertEquals(url1, ConstantPage.BASE_URL);
+        ValidatableResponse loginResponse = userClient.login(new UserCredentials(email, password));
+        String accessTokenExtract = loginResponse.extract().path("accessToken");
+        accessToken = accessTokenExtract.replace("Bearer ", "");
+        user.setAccessToken(accessToken);
 
         PersonalAccountPage personalAccountPage = open(ConstantPage.BASE_URL, PersonalAccountPage.class);
         loginPage.openPersonalAccountAfterAuthorisation();
@@ -74,5 +74,12 @@ public class RegistrationTest {
         registrationPage.setPassword(incorrectPassword);
         registrationPage.clickRegistrationButton();
         registrationPage.formError();
+        ValidatableResponse loginResponse = userClient.login(new UserCredentials(email, incorrectPassword));
+        int statusCode = loginResponse.extract().statusCode();
+        if(statusCode == 200){
+            String accessTokenExtract = loginResponse.extract().path("accessToken");
+            accessToken = accessTokenExtract.replace("Bearer ", "");
+            user.setAccessToken(accessToken);
+        }
     }
 }

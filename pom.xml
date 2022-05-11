@@ -19,13 +19,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version> 4.13.2 </version>
-            <!--Тег scope указывает на область видимости зависимости: она видна только тестовым классам в директории src/test/java-->
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-nop</artifactId>
             <version>1.7.13</version>
