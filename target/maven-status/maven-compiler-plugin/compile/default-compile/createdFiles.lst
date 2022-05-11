@@ -1,0 +1,9 @@
+api\RestClient.class
+pageobject\RegistrationPage.class
+pageobject\MainPage.class
+pageobject\LoginPage.class
+api\UserCredentials.class
+pageobject\ConstantPage.class
+api\UserClient.class
+api\User.class
+pageobject\PersonalAccountPage.class
